@@ -4,9 +4,11 @@ import { Document, Schema, Model, model } from "mongoose";
 interface IEmployee extends Document {
   first_name: string;
   last_name: string;
+  gender: string;
   imageUrl: string;
   email: string;
   phone: string;
+  badge_number: number;
   position: string;
   hire_date: Date;
   type: string;
@@ -30,6 +32,10 @@ const employeeSchema: Schema = new Schema({
     type: String,
     required: true
   },
+  gender: {
+    type: String,
+    required: true
+  },
   imageUrl: {
     type: String,
     required: true
@@ -42,6 +48,11 @@ const employeeSchema: Schema = new Schema({
   phone: {
     type: String,
     required: true
+  },
+  badge_number: {
+    type: String,
+    required: true,
+    unique: true
   },
   position: {
     type: String,
@@ -73,15 +84,15 @@ const employeeSchema: Schema = new Schema({
     required: true
   },
   city: {
-    type: Number,
+    type: String,
     required: true
   },
   state: {
-    type: Number,
+    type: String,
     required: true
   },
   zip: {
-    type: Number,
+    type: String,
     required: true
   },
 
