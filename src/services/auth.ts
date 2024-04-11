@@ -19,7 +19,16 @@ export const comparePasswords = async (
 };
 
 export const signUserToken = async (user: IUser) => {
-  let token = jwt.sign({ userId: user._id }, secret, { expiresIn: "1hr" });
+  let token = jwt.sign(
+    {
+      userId: user._id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      imageUrl: user.imageUrl
+    },
+    secret,
+    { expiresIn: "1hr" }
+  );
   return token;
 };
 
