@@ -3,9 +3,9 @@ import morgan from "morgan";
 import employeeRoutes from "./routes/employeeRoutes";
 import userRoutes from "./routes/userRoutes";
 import mongoose from "mongoose";
+require("dotenv").config();
 
-const connectionString: string =
-  "mongodb+srv://carlped417:myMONGOdb417!@peoplesoftcluster.bxgnubn.mongodb.net/?retryWrites=true&w=majority&appName=PeopleSoftCluster";
+const connectionString: string = process.env.MONGODB_CONNECTION_STRING;
 mongoose.connect(connectionString).then(
   () => console.log("database connection successful!"),
   (err) => console.log("Error connecting to the database", err)
