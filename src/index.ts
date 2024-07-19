@@ -4,7 +4,8 @@ import employeeRoutes from "./routes/employeeRoutes";
 import userRoutes from "./routes/userRoutes";
 import mongoose from "mongoose";
 
-const connectionString: string = "mongodb://localhost:27017/people_softwareDB";
+const connectionString: string =
+  "mongodb+srv://carlped417:myMONGOdb417!@cluster0.jnjd2a7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 mongoose.connect(connectionString).then(
   () => console.log("database connection successful!"),
   (err) => console.log("Error connecting to the database", err)
