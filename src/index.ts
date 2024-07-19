@@ -3,11 +3,9 @@ import morgan from "morgan";
 import employeeRoutes from "./routes/employeeRoutes";
 import userRoutes from "./routes/userRoutes";
 import mongoose from "mongoose";
-import { METHODS } from "http";
 
 const connectionString: string =
-  "mongodb+srv://carlped417:myMONGOdb417!@cluster0.jnjd2a7.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0";
-// "mongodb://localhost:27017/people_softwareDB";
+  "mongodb+srv://carlped417:myMONGOdb417!@peoplesoftcluster.bxgnubn.mongodb.net/?retryWrites=true&w=majority&appName=PeopleSoftCluster";
 mongoose.connect(connectionString).then(
   () => console.log("database connection successful!"),
   (err) => console.log("Error connecting to the database", err)
