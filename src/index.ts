@@ -3,9 +3,11 @@ import morgan from "morgan";
 import employeeRoutes from "./routes/employeeRoutes";
 import userRoutes from "./routes/userRoutes";
 import mongoose from "mongoose";
+import { METHODS } from "http";
 
 const connectionString: string =
-  "mongodb+srv://carlped417:myMONGOdb417!@cluster0.jnjd2a7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://carlped417:myMONGOdb417!@cluster0.jnjd2a7.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0";
+// "mongodb://localhost:27017/people_softwareDB";
 mongoose.connect(connectionString).then(
   () => console.log("database connection successful!"),
   (err) => console.log("Error connecting to the database", err)
@@ -21,7 +23,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const cors = require("cors");
 const corsOptions = {
-  origin: ["http://localhost:4200", "https://peoplesoft-ui.vercel.app"]
+  origin: ["https://peoplesoft-ui.vercel.app"],
+  methods: ["POST", "GET", "PUT", "DELETE"],
+  credentials: true
 };
 
 app.get("/", (_req: Request, res: Response) => {
