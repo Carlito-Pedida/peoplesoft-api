@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const cors = require("cors");
 const corsOptions = {
-  origin: ["http://localhost:4200", "http://localhost:5001"]
+  origin: ["http://localhost:4200", "https://peoplesoft-ui.vercel.app"]
 };
 
 app.get("/", (_req: Request, res: Response) => {
