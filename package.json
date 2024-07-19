@@ -8,7 +8,7 @@
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
-    "dev": "concurrently \"tsc -w\" \"nodemon build/app.js\"",
+    "dev": "concurrently \"tsc -w\" \"nodemon build/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
