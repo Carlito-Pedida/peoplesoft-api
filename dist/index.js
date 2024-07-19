@@ -8,7 +8,8 @@ const morgan_1 = __importDefault(require("morgan"));
 const employeeRoutes_1 = __importDefault(require("./routes/employeeRoutes"));
 const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const connectionString = "mongodb+srv://carlped417:myMONGOdb417!@cluster0.jnjd2a7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const connectionString = "mongodb+srv://carlped417:myMONGOdb417!@cluster0.jnjd2a7.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0";
+// "mongodb://localhost:27017/people_softwareDB";
 mongoose_1.default.connect(connectionString).then(() => console.log("database connection successful!"), (err) => console.log("Error connecting to the database", err));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 4080;
@@ -17,7 +18,9 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 const cors = require("cors");
 const corsOptions = {
-    origin: ["http://localhost:4200", "https://peoplesoft-ui.vercel.app"]
+    origin: ["https://peoplesoft-ui.vercel.app"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true
 };
 app.get("/", (_req, res) => {
     return res.send("Express Typescript on Vercel");
