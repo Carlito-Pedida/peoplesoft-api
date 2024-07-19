@@ -19,6 +19,12 @@ const cors = require("cors");
 const corsOptions = {
     origin: ["http://localhost:4200", "http://localhost:3001"]
 };
+app.get("/", (_req, res) => {
+    return res.send("Express Typescript on Vercel");
+});
+app.get("/ping", (_req, res) => {
+    return res.send("pong 🏓");
+});
 app.use(cors(corsOptions));
 // routes
 app.use("/api/employee", employeeRoutes_1.default);
