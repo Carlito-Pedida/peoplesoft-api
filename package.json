@@ -1,14 +1,13 @@
 {
   "name": "peoplesoft-nosql",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
     "build": "rimraf dist && tsc",
+    "start": "nodemon src/index.ts",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
-    "dev": "concurrently \"tsc -w\" \"nodemon build/index.js\"",
+    "dev": "concurrently \"tsc -w\" \"nodemon build/app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,20 +24,21 @@
     "nodemon": "^2.0.22",
     "pre-commit": "^1.2.2",
     "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
     "typescript": "^4.9.5"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
-    "express": "^4.17.3",
+    "express": "^4.19.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "6.8",
     "mongoose": "^6.2.5",
     "morgan": "^1.10.0",
     "mysql2": "^3.5.1",
-    "sequelize": "^6.32.1",
-    "ts-node": "^10.9.2"
+    "sequelize": "^6.32.1"
   },
+  "description": "",
   "pre-commit": [
     "ts.check",
     "build",

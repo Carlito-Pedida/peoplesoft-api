@@ -11,7 +11,7 @@ mongoose.connect(connectionString).then(
 );
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4080;
 
 app.use(morgan("dev"));
 
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const cors = require("cors");
 const corsOptions = {
-  origin: ["http://localhost:4200", "http://localhost:3001"]
+  origin: ["http://localhost:4200", "http://localhost:5001"]
 };
 
 app.get("/", (_req: Request, res: Response) => {
